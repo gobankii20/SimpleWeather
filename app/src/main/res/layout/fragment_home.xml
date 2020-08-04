@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bgApp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/viewToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:paddingStart="@dimen/d10dp"
+            android:paddingEnd="@dimen/d10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/ibToolbarSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/ic_menu_search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvToolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="@dimen/d20dp"
+                android:text="@string/title_position"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_text_18"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ibToolbarSearch"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="viewToolBar" />
+
+        <TextView
+            android:id="@+id/tvCurrentAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d10dp"
+            android:drawableStart="@android:drawable/ic_dialog_map"
+            android:drawablePadding="@dimen/d10dp"
+            android:gravity="center_vertical"
+            android:text="เขตราชเทวี"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_text_18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barrier" />
+
+        <TextView
+            android:id="@+id/tvCurrentDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d10dp"
+            android:gravity="center_vertical"
+            android:text="อ. 4 สิงหาคม 16:38"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_text_18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCurrentAddress" />
+
+        <TextView
+            android:id="@+id/tvCurrentTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d10dp"
+            android:gravity="center_vertical"
+            android:text="@string/format_temperature"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_text_42"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCurrentDate" />
+
+
+        <TextView
+            android:id="@+id/tvCurrentHumidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d10dp"
+            android:gravity="center_vertical"
+            android:text="ความชื่นของวันนี้"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_text_18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCurrentTemperature" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvWeather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCurrentHumidity" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

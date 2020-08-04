@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SimpleWeather</string>
+    <string name="title_position">ตำแหน่ง</string>
+
+
+    <string name="format_temperature">31&#xb0;</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
