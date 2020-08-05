@@ -47,3 +47,13 @@ v
 Fapp/src/main/java/com/vitavat/simpleweather/view/home/HomeViewModel.kt,2/d/2d1372f43a7b63bb69b654f1e4fb7dc739ab8759
 {
 Kapp/src/main/java/com/vitavat/simpleweather/view/home/AdapterWeatherList.kt,4/b/4b3ad281f53f6e2903a5e349c9b7ba471db582d0
+t
+Dapp/src/main/java/com/vitavat/simpleweather/utils/BindingAdapters.kt,2/5/25601ca1468ee534957dc3f671bc455d44ac0c1e
+q
+Aapp/src/main/java/com/vitavat/simpleweather/utils/ObjectManage.kt,1/c/1cf91317364fd81877ce5f0a39dcd2ad6f7d52d8
+t
+Dapp/src/main/java/com/vitavat/simpleweather/utils/KotlinExtention.kt,8/a/8a036a1435ea2740f93a14fbf08c64f9eedc5784
+p
+@app/src/main/java/com/vitavat/simpleweather/utils/DateMannage.kt,1/a/1a527742aec2b7b06e4d8327f3aef465b450a196
+u
+Eapp/src/main/java/com/vitavat/simpleweather/view/home/HomeFragment.kt,8/1/811f188f348049590aacaba56d6c0d9a79520da3

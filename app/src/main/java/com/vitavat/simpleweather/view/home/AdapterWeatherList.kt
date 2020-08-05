@@ -1,31 +1,36 @@
-package com.wewillapp.masterproject.view.main
+package com.vitavat.simpleweather.view.home
 
 import android.content.Context
+import android.text.format.DateFormat
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.wewillapp.masterproject.R
-import com.wewillapp.masterproject.databinding.ItemOrderListBinding
-import com.wewillapp.masterproject.utils.SingleLiveData
-import com.wewillapp.masterproject.utils.imageManagement.setImageView
-import com.wewillapp.masterproject.vo.model.response.DataOrderList
+import com.bumptech.glide.Glide
+import com.vitavat.simpleweather.R
+import com.vitavat.simpleweather.data.local.Constanst
+import com.vitavat.simpleweather.databinding.ItemWeatherListBinding
+import com.vitavat.simpleweather.utils.DateManage.timeStampToDateFormat
+import com.vitavat.simpleweather.utils.SingleLiveData
+import com.vitavat.simpleweather.utils.setImageView
+import com.vitavat.simpleweather.vo.model.response.Daily
+import com.vitavat.simpleweather.vo.model.response.Hourly
 import java.util.*
 
-class AdapterOrderList(
+class AdapterWeatherList(
     private var mContext: Context,
-    private var mListProduct: ArrayList<DataOrderList>,
+    private var mListWeather: ArrayList<Hourly>,
     private var mOnClickList: SingleLiveData<String>
-) : RecyclerView.Adapter<AdapterOrderList.ViewHolder>() {
+) : RecyclerView.Adapter<AdapterWeatherList.ViewHolder>() {
 
     override fun getItemCount(): Int {
-        return mListProduct.size
+        return mListWeather.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): ViewHolder {
         val binding = DataBindingUtil.inflate(
-            LayoutInflater.from(parent.context), R.layout.item_order_list, parent, false
-        ) as ItemOrderListBinding
+            LayoutInflater.from(parent.context), R.layout.item_weather_list, parent, false
+        ) as ItemWeatherListBinding
 
         return ViewHolder(binding)
     }
@@ -34,15 +39,23 @@ class AdapterOrderList(
         bindText(holder, position)
 
         holder.binding.root.setOnClickListener {
-            mOnClickList.value = mListProduct[position].bookingUsername
+            //mOnClickList.value = mListProduct[position].bookingUsername
         }
     }
 
+
     private fun bindText(holder: ViewHolder, position: Int) {
-        holder.binding.ivCircleOut.setImageView(mContext, "")
-        holder.binding.tvOrderName.text = mListProduct[position].bookingUsername
+        holder.binding.tvTime.text = timeStampToDateFormat(mListWeather[position].dt.toLong())
+
+        holder.binding.tvCurrentTemperature.text =
+            String.format(
+                mContext.resources.getString(R.string.format_number),
+                mListWeather[position].temp
+            )
+
+       mContext.setImageView(holder.binding.ivWeather,mListWeather[position].weather[0].icon)
     }
 
-    class ViewHolder(internal var binding: ItemOrderListBinding) :
+    class ViewHolder(internal var binding: ItemWeatherListBinding) :
         RecyclerView.ViewHolder(binding.root)
 }

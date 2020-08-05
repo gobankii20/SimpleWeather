@@ -7,20 +7,20 @@ data class ResponseWeather(
     val lat: Double,
     val lon: Double,
     val minutely: List<Minutely>,
-    val timezone: String,
+    var timezone: String,
     val timezone_offset: Int
 )
 
 data class Current(
     val clouds: Int,
     val dew_point: Double,
-    val dt: Int,
+    var dt: Int,
     val feels_like: Double,
     val humidity: Int,
     val pressure: Int,
     val sunrise: Int,
     val sunset: Int,
-    val temp: Double,
+    val temp: Float,
     val uvi: Double,
     val visibility: Int,
     val weather: List<Weather>,
@@ -34,7 +34,7 @@ data class Daily(
     val dt: Int,
     val feels_like: FeelsLike,
     val humidity: Int,
-    val pop: Int,
+    val pop: Double,
     val pressure: Int,
     val rain: Double,
     val sunrise: Int,
@@ -52,7 +52,7 @@ data class Hourly(
     val dt: Int,
     val feels_like: Double,
     val humidity: Int,
-    val pop: Int,
+    val pop: Double,
     val pressure: Int,
     val temp: Double,
     val visibility: Int,
@@ -81,7 +81,7 @@ data class FeelsLike(
 )
 
 data class Temp(
-    val day: Double,
+    val day: Float,
     val eve: Double,
     val max: Double,
     val min: Double,

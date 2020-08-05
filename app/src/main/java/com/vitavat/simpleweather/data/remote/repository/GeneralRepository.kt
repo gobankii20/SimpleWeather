@@ -7,10 +7,10 @@ import com.vitavat.simpleweather.vo.model.response.ResponseWeather
 
 class GeneralRepository constructor(val apiService: APIService) {
 
-    fun getListNews(bodyWeather: BodyWeather) = object : NetworkBoundResource<ResponseWeather>() {
+    fun getListWeather(bodyWeather: BodyWeather) = object : NetworkBoundResource<ResponseWeather>() {
         override fun createCall() = apiService.getListWeather(
             bodyWeather.lat, bodyWeather.lon,
-            bodyWeather.exclude, bodyWeather.appid
+            bodyWeather.exclude,bodyWeather.units, bodyWeather.appid
         )
     }.asLiveData()
 }

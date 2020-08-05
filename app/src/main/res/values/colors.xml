@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
   <color name="colorPrimary">#000000</color>
   <color name="colorPrimaryDark">#000000</color>
@@ -17,4 +17,9 @@
   <color name="colorButtonBackPress">#202020</color>
 
   <color name="colorRowWeather">#424242</color>
+
+  // Place Holder
+  <color name="placeHolderColorBlack" tools:keep="@color/placeHolderColorBlack">#1a1a1a</color>
+  <color name="placeHolderColorGray">#efefef</color>
+  <color name="placeHolderColorWhite">#ffffff</color>
 </resources>

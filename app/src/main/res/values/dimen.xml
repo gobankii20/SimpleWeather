@@ -23,6 +23,7 @@
     <dimen name="d35dp">35dp</dimen>
     <dimen name="d40dp">40dp</dimen>
     <dimen name="d50dp">50dp</dimen>
+    <dimen name="d60dp">60dp</dimen>
     <dimen name="d80dp">80dp</dimen>
 
     <dimen name="font_text_14">14sp</dimen>
@@ -31,4 +32,5 @@
     <dimen name="font_text_20">20sp</dimen>
     <dimen name="font_text_22">22sp</dimen>
     <dimen name="font_text_42">42sp</dimen>
+    <dimen name="font_text_62">62sp</dimen>
 </resources>
