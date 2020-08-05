@@ -36,6 +36,6 @@ object OkHttpClientBuilder {
     }
 
     fun getUrlServer(): String {
-        return if (BuildConfig.DEBUG) Constanst.URL_DEV else Constanst.URL_PRO
+        return BuildConfig.SERVER_URL
     }
 }
